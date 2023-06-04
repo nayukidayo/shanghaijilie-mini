@@ -1,0 +1,6 @@
+<!--pages/device/index.wxml-->
+<view class="container">
+  <van-cell-group inset title="最新数据">
+    <van-cell wx:for="{{sensor}}" wx:for-item="s" wx:key="flag" title="{{s.name}}" value="{{s.value}} {{s.unit}}" data-flag="{{s.flag}}" clickable bind:tap="onTap" />
+  </van-cell-group>
+</view>

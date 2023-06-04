@@ -1,0 +1,18 @@
+{
+  "entryPagePath": "pages/gateway/index",
+  "pages": [
+    "pages/gateway/index",
+    "pages/device/index",
+    "pages/sensor/index",
+    "pages/signin/index"
+  ],
+  "window": {
+    "backgroundColor": "#eff2f5",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "上海吉列设备智慧检测",
+    "navigationBarTextStyle": "black"
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

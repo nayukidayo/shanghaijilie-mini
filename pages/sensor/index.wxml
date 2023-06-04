@@ -1,0 +1,11 @@
+<!--pages/sensor/index.wxml-->
+<view class="container">
+  <van-cell-group inset title="历史数据">
+    <van-tabs type="card" active="{{ duration }}" bind:change="onTabChange">
+      <van-tab wx:for="{{tabs}}" wx:key="name" name="{{item.name}}" title="{{item.title}}"></van-tab>
+    </van-tabs>
+  </van-cell-group>
+  <view class="charts-box" wx:if="{{chart}}">
+    <qiun-wx-ucharts type="line" opts="{{chart.opts}}" chartData="{{chart.data}}" animation="{{false}}" canvas2d />
+  </view>
+</view>

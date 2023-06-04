@@ -1,0 +1,13 @@
+<!--pages/signin/index.wxml-->
+<view class="container">
+  <van-cell-group inset title="登录">
+    <van-field value="{{ username }}" required clearable label="用户名" placeholder="请输入用户名" bind:change="onUsernameChange" />
+    <van-field value="{{ password }}" password required clearable label="密码" placeholder="请输入密码" bind:change="onPasswordChange" />
+    <van-cell>
+      <van-checkbox label-class="checkbox" label-position="left" shape="square" value="{{remember}}" bind:change="onCheckboxToggle">自动登录</van-checkbox>
+    </van-cell>
+  </van-cell-group>
+  <van-cell-group inset title=" ">
+    <van-button type="info" block bind:click="onBtnClick">确认</van-button>
+  </van-cell-group>
+</view>

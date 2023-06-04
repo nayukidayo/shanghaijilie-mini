@@ -1,0 +1,14 @@
+<!--pages/gateway/index.wxml-->
+<view class="container">
+  <view wx:for="{{gateway}}" wx:for-item="g" wx:key="id" data-id="{{g.id}}" bindtap="onTap">
+    <van-card custom-class="card" title="{{g.name}}" desc="{{g.code}}" thumb="{{baseUrl + g.thumb}}">
+      <view slot="tags">
+        <van-tag custom-class="tag" plain wx:for="{{g.tags}}" wx:for-item="t" wx:key="*this" color="{{tag[t].color}}">{{tag[t].name}}</van-tag>
+      </view>
+      <view slot="price">
+        <text wx:if="{{g.health}}" class="connect">在线</text>
+        <text wx:else class="disconnect">离线</text>
+      </view>
+    </van-card>
+  </view>
+</view>

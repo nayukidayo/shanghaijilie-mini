@@ -1,0 +1,25 @@
+/* pages/gateway/index.wxss */
+.card {
+  border-bottom: 1px solid #eff2f5;
+  background-color: white !important;
+}
+
+.card:active {
+  background-color: #f2f3f5 !important;
+}
+
+.tag {
+  margin-right: 10px;
+}
+
+.connect {
+  color: #07c160;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.disconnect {
+  color: #ee0a24;
+  font-size: 12px;
+  font-weight: 700;
+}

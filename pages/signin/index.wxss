@@ -1,0 +1,5 @@
+/* pages/signin/index.wxss */
+.checkbox {
+  padding-left: 0 !important;
+  padding-right: 32px !important;
+}
