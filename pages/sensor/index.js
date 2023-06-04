@@ -3,6 +3,7 @@ import chart from '../../utils/chart.js'
 
 Page({
   data: {
+    init: true,
     baseUrl: 'https://ems.hztauto.com',
     device: {},
     sensor: {},
@@ -16,10 +17,16 @@ Page({
   },
 
   onLoad() {
+    setTimeout(() => this.setData({ init: false }))
     const eventChannel = this.getOpenerEventChannel()
     eventChannel.on('sensor', ({ device, sensor }) => {
-      this.setData({ device, sensor })
+      this.setData({ device, sensor }, () => this.query())
     })
+  },
+
+  onShow() {
+    if (this.data.init) return
+    this.query()
   },
 
   onReady() {
@@ -28,7 +35,11 @@ Page({
     })
   },
 
-  onShow() {
+  onPullDownRefresh() {
+    this.query()
+  },
+
+  query() {
     wx.showLoading({ mask: true, title: '加载中...' })
     wx.request({
       url: `${this.data.baseUrl}/api/telemetry/history`,
@@ -48,10 +59,6 @@ Page({
         wx.hideLoading()
       },
     })
-  },
-
-  onPullDownRefresh() {
-    this.onShow()
   },
 
   onTabChange(e) {
