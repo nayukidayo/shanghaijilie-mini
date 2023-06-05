@@ -1,0 +1,6 @@
+/* pages/chart/index.wxss */
+.charts-box {
+  padding-top: 25px;
+  width: 100%;
+  height: 250px;
+}

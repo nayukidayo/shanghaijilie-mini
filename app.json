@@ -2,8 +2,7 @@
   "entryPagePath": "pages/gateway/index",
   "pages": [
     "pages/gateway/index",
-    "pages/device/index",
-    "pages/sensor/index",
+    "pages/chart/index",
     "pages/signin/index"
   ],
   "window": {

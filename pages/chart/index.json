@@ -1,0 +1,7 @@
+{
+  "backgroundColor": "#f0f2f5",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "qiun-wx-ucharts": "@qiun/wx-ucharts"
+  }
+}

@@ -17,11 +17,11 @@ const coverXtitle = {
   '7d': '日',
 }
 
-function limitYsize(value) {
+export function limitYsize(value) {
   if (!value.length) return
   const num = value[value.length - 1]
   const change = num * 0.5
-  return { min: num - change, max: num + change }
+  return { min: num - change, max: num + change || 5 }
 }
 
 export default function (history, duration) {

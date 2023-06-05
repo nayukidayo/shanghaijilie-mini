@@ -69,8 +69,16 @@ Page({
 
   onTap(e) {
     const device = this.data.gateway.find(v => v.id === e.currentTarget.dataset.id)
+    if (!device.health) {
+      wx.showToast({
+        title: '设备已离线',
+        icon: 'error',
+        mask: true,
+      })
+      return
+    }
     wx.navigateTo({
-      url: '/pages/device/index',
+      url: '/pages/chart/index',
       success: res => {
         res.eventChannel.emit('device', { device })
       },

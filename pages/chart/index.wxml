@@ -1,0 +1,6 @@
+<!--pages/chart/index.wxml-->
+<view class="container">
+  <view class="charts-box" wx:for="{{sensor}}" wx:key="id" wx:for-item="s">
+    <qiun-wx-ucharts type="line" opts="{{s.chart.opts}}" chartData="{{s.chart.data}}" animation="{{false}}" canvas2d />
+  </view>
+</view>
