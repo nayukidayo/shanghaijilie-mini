@@ -12,7 +12,11 @@ const xAxis = {
 }
 
 export function sensor(data) {
-  console.log(data)
+  const categories = data.time.map(v => {
+    const date = new Date(v)
+    return `${date.getHours()}:${date.getMinutes().toString().padEnd(2, '0')}`
+  })
+  
   const result = [
     {
       id: 'dianya',
@@ -23,7 +27,7 @@ export function sensor(data) {
           yAxis: { min: 0, max: 500 },
         },
         data: {
-          categories: data.time,
+          categories,
           series: [data.REG20023, data.REG20024, data.REG20025],
         },
       },
@@ -37,7 +41,7 @@ export function sensor(data) {
           yAxis: { min: 0, max: 50 },
         },
         data: {
-          categories: data.time,
+          categories,
           series: [data.REG20026, data.REG20027, data.REG20028],
         },
       },
@@ -51,7 +55,7 @@ export function sensor(data) {
           yAxis: limitYsize(data.REG20033.data),
         },
         data: {
-          categories: data.time,
+          categories,
           series: [data.REG20033],
         },
       },
@@ -65,7 +69,7 @@ export function sensor(data) {
           yAxis: limitYsize(data.REG20036.data),
         },
         data: {
-          categories: data.time,
+          categories,
           series: [data.REG20036],
         },
       },
@@ -82,7 +86,7 @@ export function sensor(data) {
           yAxis: limitYsize(data.AI1.data),
         },
         data: {
-          categories: data.time,
+          categories,
           series: [data.AI1],
         },
       },
@@ -99,7 +103,7 @@ export function sensor(data) {
           yAxis: limitYsize(data.AI2.data),
         },
         data: {
-          categories: data.time,
+          categories,
           series: [data.AI2],
         },
       },
